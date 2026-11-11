@@ -1,0 +1,52 @@
+<h2>Додати новий фільм</h2>
+
+<form #movieForm="ngForm" (ngSubmit)="addMovie()">
+
+  <label>Назва фільму:</label>
+  <input
+    type="text"
+    name="title"
+    [(ngModel)]="movie.title"
+    required
+    minlength="3"
+    maxlength="50"
+    #title="ngModel"
+  >
+
+  @if (title.invalid && title.touched) {
+    <p class="error">Назва обов'язкова (від 3 до 50 символів).</p>
+  }
+
+  <label>Режисер:</label>
+  <input
+    type="text"
+    name="director"
+    [(ngModel)]="movie.director"
+    required
+    minlength="3"
+    maxlength="50"
+    #director="ngModel"
+  >
+
+  @if (director.invalid && director.touched) {
+    <p class="error">Вкажіть режисера (від 3 до 50 символів).</p>
+  }
+
+  <label>Опис:</label>
+  <textarea
+    name="description"
+    [(ngModel)]="movie.description"
+    required
+    minlength="10"
+    #description="ngModel"
+  ></textarea>
+
+  @if (description.invalid && description.touched) {
+    <p class="error">Опис повинен містити мінімум 10 символів.</p>
+  }
+
+  <button type="submit" [disabled]="movieForm.invalid">
+    Додати фільм
+  </button>
+
+</form>

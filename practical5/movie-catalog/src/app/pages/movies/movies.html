@@ -1,0 +1,19 @@
+<h2>Каталог фільмів</h2>
+
+<div class="movies-list">
+  @for (movie of movies; track movie.id) {
+    <div class="movie-card">
+      <h3>{{ movie.title }}</h3>
+
+      <p><strong>Режисер:</strong> {{ movie.director }}</p>
+
+      <p>{{ movie.description }}</p>
+
+      <a [routerLink]="['/movie', movie.id]">
+        Детальніше
+      </a>
+    </div>
+  } @empty {
+    <p>Фільмів поки немає.</p>
+  }
+</div>

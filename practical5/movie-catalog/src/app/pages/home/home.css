@@ -1,0 +1,30 @@
+.home {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #222;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background: #444;
+}

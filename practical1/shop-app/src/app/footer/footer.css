@@ -1,0 +1,14 @@
+footer {
+  margin-top: 70px;
+  padding: 25px 20px;
+  text-align: center;
+  background: #fff7f9;
+  border-top: 1px solid #f1dfe5;
+}
+
+footer p {
+  margin: 0;
+  color: #8a6875;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}

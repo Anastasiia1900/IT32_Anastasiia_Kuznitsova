@@ -1,0 +1,49 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 50px;
+  background: #fff7f9;
+  border-bottom: 1px solid #f1dfe5;
+}
+
+h1 {
+  margin: 0;
+  color: #6d435a;
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #5c4a52;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #d58aa5;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #b45f80;
+}
+
+nav a:hover::after {
+  width: 100%;
+}

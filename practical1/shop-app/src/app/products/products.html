@@ -1,0 +1,25 @@
+<main>
+  <h2>Наші товари</h2>
+
+  <div class="products">
+    <app-product-card
+      [name]="'Ноутбук ASUS'"
+      [price]="25000"
+      (buy)="onProductBought()">
+    </app-product-card>
+
+    <app-product-card
+      [name]="'iPhone 15'"
+      [price]="32000"
+      (buy)="onProductBought()">
+    </app-product-card>
+
+    <app-product-card
+      [name]="'Навушники JBL'"
+      [price]="3500"
+      (buy)="onProductBought()">
+    </app-product-card>
+  </div>
+
+  <p class="message">{{ message }}</p>
+</main>

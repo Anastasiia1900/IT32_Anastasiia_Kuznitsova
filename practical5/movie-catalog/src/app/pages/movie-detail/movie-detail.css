@@ -1,0 +1,23 @@
+.movie-detail {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-detail h2 {
+  font-size: 28px;
+  color: #222;
+}
+
+.movie-detail p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.movie-detail a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #222;
+  font-weight: bold;
+}

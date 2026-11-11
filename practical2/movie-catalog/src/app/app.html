@@ -1,0 +1,68 @@
+<div class="container">
+
+  <h1>Каталог фільмів</h1>
+
+  <p class="counter">
+    Всього фільмів: {{ movies.length }}
+  </p>
+
+  <h2>Додати фільм</h2>
+
+  <div class="form">
+
+    <input
+      type="text"
+      placeholder="Назва фільму"
+      [(ngModel)]="newTitle"
+    >
+
+    <input
+      type="number"
+      placeholder="Рік"
+      [(ngModel)]="newYear"
+    >
+
+    <input
+      type="number"
+      placeholder="Рейтинг 1-10"
+      [(ngModel)]="newRating"
+    >
+
+    <button
+      (click)="addMovie()"
+      [disabled]="newTitle.trim() === ''"
+    >
+      Додати фільм
+    </button>
+
+  </div>
+
+  <h2>Фільми</h2>
+
+  <div
+    class="movie"
+    *ngFor="let movie of movies; let i = index"
+    [ngClass]="{
+      'high': movie.rating >= 8,
+      'medium': movie.rating >= 5 && movie.rating < 8,
+      'low': movie.rating < 5
+    }"
+  >
+
+    <h3>{{ movie.title }}</h3>
+
+    <p>Рік: {{ movie.year }}</p>
+
+    <p>Рейтинг: {{ movie.rating }}/10</p>
+
+    <p *ngIf="movie.rating >= 8" class="recommended">
+      Рекомендовано
+    </p>
+
+    <button (click)="deleteMovie(i)">
+      Видалити
+    </button>
+
+  </div>
+
+</div>

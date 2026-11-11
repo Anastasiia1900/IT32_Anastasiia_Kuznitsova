@@ -1,0 +1,26 @@
+main {
+  padding: 40px;
+  text-align: center;
+  background: #fffdfd;
+}
+
+main h2 {
+  color: #6d435a;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.message {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #b45f80;
+}

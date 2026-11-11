@@ -1,0 +1,62 @@
+<h1>Каталог фільмів</h1>
+
+<div class="movies">
+  @for (movie of movies(); track movie.id) {
+    <div class="movie-card">
+      <h2>{{ movie.title }}</h2>
+
+      <p>Рік: {{ movie.year }}</p>
+
+      <p>Рейтинг: {{ movie.rating }}</p>
+
+      <button (click)="removeMovie(movie.id)">
+        Видалити
+      </button>
+    </div>
+  }
+</div>
+
+<hr>
+
+<h2>Додати фільм</h2>
+
+<form (ngSubmit)="addMovie()">
+
+  <label>
+    Назва:
+    <input
+      type="text"
+      [(ngModel)]="newTitle"
+      name="title"
+    >
+  </label>
+
+  <br><br>
+
+  <label>
+    Рік:
+    <input
+      type="number"
+      [(ngModel)]="newYear"
+      name="year"
+    >
+  </label>
+
+  <br><br>
+
+  <label>
+    Рейтинг:
+    <input
+      type="number"
+      [(ngModel)]="newRating"
+      name="rating"
+    >
+  </label>
+
+  <br><br>
+
+  <button type="submit">
+    Додати фільм
+  </button>
+
+</form>

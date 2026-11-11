@@ -1,0 +1,62 @@
+.container {
+  width: 700px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.counter {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.movie {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.high {
+  border-color: green;
+  background-color: #e8f5e9;
+}
+
+.medium {
+  border-color: orange;
+  background-color: #fff8e1;
+}
+
+.low {
+  border-color: red;
+  background-color: #ffebee;
+}
+
+.recommended {
+  font-weight: bold;
+}

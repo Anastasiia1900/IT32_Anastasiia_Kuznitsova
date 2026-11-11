@@ -1,0 +1,106 @@
+<h2>Додати фільм</h2>
+
+<form #form="ngForm" (ngSubmit)="addMovie(form)">
+
+  <div>
+    <label>Назва фільму:</label>
+
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="movie.title"
+      #title="ngModel"
+      required
+      minlength="3"
+      maxlength="50"
+    />
+
+    @if (title.invalid && (title.touched || form.submitted)) {
+      <div class="error">
+        @if (title.errors?.['required']) {
+          <p>Введіть назву фільму</p>
+        }
+        @if (title.errors?.['minlength']) {
+          <p>Назва повинна містити мінімум 3 символи</p>
+        }
+        @if (title.errors?.['maxlength']) {
+          <p>Назва повинна містити максимум 50 символів</p>
+        }
+      </div>
+    }
+  </div>
+
+  <div>
+    <label>Режисер:</label>
+
+    <input
+      type="text"
+      name="director"
+      [(ngModel)]="movie.director"
+      #director="ngModel"
+      required
+      minlength="3"
+      maxlength="40"
+    />
+
+    @if (director.invalid && (director.touched || form.submitted)) {
+      <div class="error">
+        @if (director.errors?.['required']) {
+          <p>Вкажіть режисера</p>
+        }
+        @if (director.errors?.['minlength']) {
+          <p>Ім'я режисера повинно містити мінімум 3 символи</p>
+        }
+        @if (director.errors?.['maxlength']) {
+          <p>Ім'я режисера повинно містити максимум 40 символів</p>
+        }
+      </div>
+    }
+  </div>
+
+  <div>
+    <label>Опис:</label>
+
+    <textarea
+      name="description"
+      [(ngModel)]="movie.description"
+      #description="ngModel"
+      required
+      minlength="10"
+      maxlength="200"
+    ></textarea>
+
+    @if (description.invalid && (description.touched || form.submitted)) {
+      <div class="error">
+        @if (description.errors?.['required']) {
+          <p>Опис обов'язковий</p>
+        }
+        @if (description.errors?.['minlength']) {
+          <p>Опис повинен містити мінімум 10 символів</p>
+        }
+        @if (description.errors?.['maxlength']) {
+          <p>Опис повинен містити максимум 200 символів</p>
+        }
+      </div>
+    }
+  </div>
+
+  <button type="submit">Додати фільм</button>
+
+</form>
+
+<hr>
+
+<h2>Список фільмів</h2>
+
+@if (movies.length === 0) {
+  <p>Поки що фільмів немає.</p>
+}
+
+@for (film of movies; track $index) {
+  <div class="movie-card">
+    <h3>{{ film.title }}</h3>
+    <p><strong>Режисер:</strong> {{ film.director }}</p>
+    <p><strong>Опис:</strong> {{ film.description }}</p>
+  </div>
+}

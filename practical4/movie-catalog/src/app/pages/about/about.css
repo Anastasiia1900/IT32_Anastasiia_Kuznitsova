@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  color: #d6336c;
+  font-size: 36px;
+  margin-top: 40px;
+}
+
+p {
+  text-align: center;
+  color: #6b3045;
+  font-size: 18px;
+  margin: 15px auto;
+  max-width: 700px;
+}
